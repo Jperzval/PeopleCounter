@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         presenter.getSavedCount();
     }
 
-    public void onPlusButtonClick() {
+    private void onPlusButtonClick() {
         Button plusButton = findViewById(R.id.button_plus);
         plusButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         });
     }
 
-    public void onMinusButtonClick() {
+    private void onMinusButtonClick() {
         Button minusButton = findViewById(R.id.button_minus);
         minusButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         });
     }
 
-    public void onResetButtonClick() {
+    private void onResetButtonClick() {
         Button resetButton = findViewById(R.id.button_reset);
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
