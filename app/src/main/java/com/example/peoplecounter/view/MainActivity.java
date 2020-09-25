@@ -2,17 +2,45 @@ package com.example.peoplecounter.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.peoplecounter.Contract;
 import com.example.peoplecounter.R;
+import com.example.peoplecounter.model.Counter;
+import com.example.peoplecounter.presenter.CounterPresenter;
 
 public class MainActivity extends AppCompatActivity implements Contract.View {
+
+    private static final String SHARED_PREF_KEY = "SharedPref";
+    private Contract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_KEY, MODE_PRIVATE);
+        Counter counter = new Counter(0, 0);
+        presenter = new CounterPresenter(this, sharedPreferences, counter);
+        presenter.onCounterStart();
+        onPlusButtonClick();
+        onMinusButtonClick();
+        onResetButtonClick();
+        presenter.getSavedCount();
+    }
+
+    public void onPlusButtonClick() {
+
+    }
+
+    public void onMinusButtonClick() {
+
+    }
+
+    public void onResetButtonClick() {
+
     }
 
     @Override
