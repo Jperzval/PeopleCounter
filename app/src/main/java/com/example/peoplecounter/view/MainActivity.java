@@ -97,4 +97,16 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         Button minusButton = findViewById(R.id.button_minus);
         minusButton.setVisibility(View.VISIBLE);
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        presenter.getSavedCount();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        presenter = null;
+    }
 }
