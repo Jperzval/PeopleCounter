@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PeopleCounter</string>
+    <string name="text_view_total_count">Total: %1$d</string>
+    <string name="text_view_current_count">%1$d People</string>
+    <string name="button_reset">RESET</string>
+    <string name="button_plus_sign">+</string>
+    <string name="button_minus_sign">-</string>
 </resources>
