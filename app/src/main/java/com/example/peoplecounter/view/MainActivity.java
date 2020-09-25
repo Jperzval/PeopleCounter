@@ -1,8 +1,10 @@
-package com.example.peoplecounter;
+package com.example.peoplecounter.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.peoplecounter.R;
 
 public class MainActivity extends AppCompatActivity {
 
