@@ -88,11 +88,13 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
 
     @Override
     public void hideMinusButton() {
-
+        Button minusButton = findViewById(R.id.button_minus);
+        minusButton.setVisibility(View.GONE);
     }
 
     @Override
     public void showMinusButton() {
-
+        Button minusButton = findViewById(R.id.button_minus);
+        minusButton.setVisibility(View.VISIBLE);
     }
 }
