@@ -69,7 +69,9 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
 
     @Override
     public void displayCurrentCount(int currentCount) {
-
+        TextView textViewCurrentCount = findViewById(R.id.text_view_current_count);
+        String current = getResources().getString(R.string.text_view_current_count, currentCount);
+        textViewCurrentCount.setText(current);
     }
 
     @Override
