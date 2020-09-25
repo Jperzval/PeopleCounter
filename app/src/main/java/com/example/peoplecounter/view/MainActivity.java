@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
 
     @Override
     public void displayTotalCount(int total) {
-        
+
     }
 
     @Override
