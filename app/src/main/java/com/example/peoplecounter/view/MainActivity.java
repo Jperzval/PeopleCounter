@@ -76,12 +76,14 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
 
     @Override
     public void changeTextColorToRed() {
-
+        TextView textViewCurrentCount = findViewById(R.id.text_view_current_count);
+        textViewCurrentCount.setTextColor(getResources().getColor(R.color.colorRed));
     }
 
     @Override
     public void changeTextColorToPrimaryDark() {
-
+        TextView textViewCurrentCount = findViewById(R.id.text_view_current_count);
+        textViewCurrentCount.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
     }
 
     @Override
