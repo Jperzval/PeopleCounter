@@ -32,15 +32,31 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
     }
 
     public void onPlusButtonClick() {
-
+        Button plusButton = findViewById(R.id.button_plus);
+        plusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { presenter.increasePeopleCount();
+            }
+        });
     }
 
     public void onMinusButtonClick() {
-
+        Button minusButton = findViewById(R.id.button_minus);
+        minusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { presenter.decreasePeopleCount();
+            }
+        });
     }
 
     public void onResetButtonClick() {
-
+        Button resetButton = findViewById(R.id.button_reset);
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.resetCount();
+            }
+        });
     }
 
     @Override
