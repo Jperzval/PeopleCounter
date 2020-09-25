@@ -7,7 +7,7 @@ package com.example.peoplecounter;
 public interface Contract {
 
     interface View {
-        void displayTotalCount(int total);
+        void displayTotalCount(int totalCount);
 
         void displayCurrentCount(int currentCount);
 

@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.peoplecounter.Contract;
 import com.example.peoplecounter.R;
@@ -60,8 +61,10 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
     }
 
     @Override
-    public void displayTotalCount(int total) {
-
+    public void displayTotalCount(int totalCount) {
+        TextView textViewTotalCount = findViewById(R.id.text_view_total_count);
+        String total = getResources().getString(R.string.text_view_total_count, totalCount);
+        textViewTotalCount.setText(total);
     }
 
     @Override
