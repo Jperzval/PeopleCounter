@@ -37,6 +37,7 @@ public class CounterPresenter implements Contract.Presenter {
         counter.setTotalCount(counter.getTotalCount() + 1);
         if (counter.getCurrentCount() > 0) counterView.showMinusButton();
         if (counter.getCurrentCount() > 15) counterView.changeTextColorToRed();
+        saveCount(counter.getCurrentCount(), counter.getTotalCount());
         counterView.displayCurrentCount(counter.getCurrentCount());
         counterView.displayTotalCount(counter.getTotalCount());
     }
@@ -46,6 +47,7 @@ public class CounterPresenter implements Contract.Presenter {
         counter.setCurrentCount(counter.getCurrentCount() - 1);
         if (counter.getCurrentCount() < 1) counterView.hideMinusButton();
         if (counter.getCurrentCount() < 16) counterView.changeTextColorToPrimaryDark();
+        saveCount(counter.getCurrentCount(), counter.getTotalCount());
         counterView.displayCurrentCount(counter.getCurrentCount());
     }
 
@@ -53,6 +55,7 @@ public class CounterPresenter implements Contract.Presenter {
     public void resetCount() {
         counter.setTotalCount(0);
         counter.setCurrentCount(0);
+        saveCount(counter.getCurrentCount(), counter.getTotalCount());
         if (counter.getCurrentCount() < 1) counterView.hideMinusButton();
         counterView.changeTextColorToPrimaryDark();
         counterView.displayTotalCount(counter.getCurrentCount());
@@ -61,10 +64,18 @@ public class CounterPresenter implements Contract.Presenter {
 
     @Override
     public void getSavedCount() {
-
+        counter.setCurrentCount(sharedPreferences.getInt(CURRENT_COUNT, 0));
+        counter.setTotalCount(sharedPreferences.getInt(TOTAL_COUNT, 0));
+        if (counter.getCurrentCount() > 0) counterView.showMinusButton();
+        if (counter.getCurrentCount() > 15) counterView.changeTextColorToRed();
+        counterView.displayCurrentCount(counter.getCurrentCount());
+        counterView.displayTotalCount(counter.getTotalCount());
     }
 
     private void saveCount(int current, int total) {
-
+        sharedPreferences.edit()
+                .putInt(CURRENT_COUNT, current)
+                .putInt(TOTAL_COUNT, total)
+                .apply();
     }
 }
